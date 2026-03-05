@@ -2,7 +2,7 @@
   "name": "exercise-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wyattchou.github.io/exercise-app",
+  "homepage": "https://Wyattchou.github.io/exercise-app",
 
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
