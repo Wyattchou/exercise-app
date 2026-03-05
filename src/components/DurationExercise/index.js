@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function DurationExercise({ name }) {
+function DurationExercise({ name, goBack }) {
   const [seconds, setSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -51,6 +51,13 @@ function DurationExercise({ name }) {
       >
         Reset
       </button>
+
+      <br /><br />
+
+      <button onClick={goBack}>
+        Back
+      </button>
+
     </div>
   );
 }

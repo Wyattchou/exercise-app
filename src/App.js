@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RepetitionExercise from "./components/RepetitionExercise";
 import DurationExercise from "./components/DurationExercise";
+import RunningExercise from "./components/RunningExercise";
 
 function App() {
   const [selectedExercise, setSelectedExercise] = useState(null);
@@ -11,17 +12,35 @@ function App() {
     { name: "Plank", type: "duration" }
   ];
 
-  if (selectedExercise) {
-    if (selectedExercise.type === "repetition") {
-      return (
-        <RepetitionExercise name={selectedExercise.name} />
-      );
-    } else if (selectedExercise.type === "duration") {
-      return (
-        <DurationExercise name={selectedExercise.name} />
-      );
-    }
+if (selectedExercise) {
+
+  if (selectedExercise.name === "Running") {
+    return (
+      <RunningExercise 
+        name={selectedExercise.name} 
+        goBack={() => setSelectedExercise(null)}
+      />
+    );
   }
+
+  if (selectedExercise.type === "repetition") {
+    return (
+      <RepetitionExercise 
+        name={selectedExercise.name} 
+        goBack={() => setSelectedExercise(null)}
+      />
+    );
+  }
+
+  if (selectedExercise.type === "duration") {
+    return (
+      <DurationExercise 
+        name={selectedExercise.name} 
+        goBack={() => setSelectedExercise(null)}
+      />
+    );
+  }
+}
 
   return (
     <div style={{ textAlign: "center" }}>

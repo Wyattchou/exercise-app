@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RepetitionExercise({ name }) {
+function RepetitionExercise({ name, goBack }) {
   const [count, setCount] = useState(0);
 
   return (
@@ -16,6 +16,13 @@ function RepetitionExercise({ name }) {
       <button onClick={() => setCount(0)} style={{ marginLeft: "10px" }}>
         Reset
       </button>
+
+      <br /><br />
+
+      <button onClick={goBack}>
+        Back
+      </button>
+
     </div>
   );
 }
